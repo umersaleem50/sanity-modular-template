@@ -1,186 +1,277 @@
 "use client";
+import { TimelineAnimation } from "@/components/ui/TimeLine";
+import Image from "next/image";
+import { useRef } from "react";
 
-import { useCallback, useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+function Testimonials() {
+  const testimonialRef = useRef<HTMLDivElement>(null);
 
-import { testimonials } from "@/Devdata/CONSTANTS";
-// import { getAvatarUrl, getTestimonials } from "@smoothui/data";
-
-const testimonials = testimonials;
-
-export function TestimonialsGrid() {
-  const [active, setActive] = useState(0);
-  const [autoplay] = useState(false);
-
-  const handleNext = useCallback(() => {
-    setActive((prev) => (prev + 1) % testimonials.length);
-  }, []);
-
-  const handlePrev = () => {
-    setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  const revealVariants = {
+    visible: (i: number) => ({
+      y: 0,
+      opacity: 1,
+      filter: "blur(0px)",
+      transition: {
+        delay: i * 0.4,
+        duration: 0.5,
+      },
+    }),
+    hidden: {
+      filter: "blur(10px)",
+      y: +20,
+      opacity: 0,
+    },
   };
-
-  const isActive = (index: number) => {
-    return index === active;
-  };
-
-  useEffect(() => {
-    if (autoplay) {
-      const interval = setInterval(handleNext, 5000);
-      return () => clearInterval(interval);
-    }
-  }, [autoplay, handleNext]);
 
   return (
-    <section>
-      <div className="bg-muted min-h-auto py-24">
-        <div className="container mx-auto w-full max-w-6xl px-6">
-          <motion.div
-            className="mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+    <>
+      <section
+        className="relative  h-full container mx-auto  rounded-lg  py-14 "
+        ref={testimonialRef}
+      >
+        <article
+          className={"max-w-(--breakpoint-md) mx-auto text-center space-y-2 "}
+        >
+          <TimelineAnimation
+            as="h1"
+            className={"xl:text-4xl text-3xl  font-medium"}
+            animationNum={0}
+            customVariants={revealVariants}
+            timelineRef={testimonialRef}
           >
-            {/* Layout: Title on left, Testimonial on right */}
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
-              {/* Left side - Title and description */}
-              <div className="flex flex-col justify-center">
-                <h2 className="text-foreground mb-4 text-4xl font-semibold">
-                  What Developers Say
-                </h2>
-                <p className="text-foreground/70 text-lg text-balance">
-                  Join thousands of developers who are building faster, more
-                  beautiful UIs with SmoothUI. See what they&apos;re saying
-                  about their experience.
+            Trusted by Startups and the world&apos;s largest companies
+          </TimelineAnimation>
+          <TimelineAnimation
+            as="p"
+            className={"mx-auto text-gray-500"}
+            animationNum={1}
+            customVariants={revealVariants}
+            timelineRef={testimonialRef}
+          >
+            Let&apos;s hear how hypershpere client&apos;s feels about our
+            service
+          </TimelineAnimation>
+        </article>
+        <div className="lg:grid lg:grid-cols-3  gap-2 flex flex-col w-full lg:py-10 pt-10 pb-4 lg:px-10 px-4">
+          <div className="md:flex lg:flex-col lg:space-y-2 h-full lg:gap-0 gap-2 ">
+            <TimelineAnimation
+              animationNum={0}
+              customVariants={revealVariants}
+              timelineRef={testimonialRef}
+              className=" lg:flex-7 flex-6 flex flex-col justify-between relative bg-primaryColor overflow-hidden rounded-lg border border-gray-200 dark:border-neutral-800 p-5"
+            >
+              <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-size-[50px_56px] mask-[radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+              <figure>
+                <Image
+                  src={"https://pro-section.ui-layouts.com/logos/Logo-1.svg"}
+                  alt="logo"
+                  width={200}
+                  height={200}
+                />
+              </figure>
+              <article className="mt-auto">
+                <p>
+                  We&apos;ve seen incredible results with Hypersphere. Their
+                  expertise, dedication.
                 </p>
-              </div>
-              {/* Right side - Testimonial card */}
-              <div className="relative flex min-h-fit flex-col items-end">
-                {/* Navigation Arrows - Above the card */}
-                <div className="mb-4 flex justify-center gap-2">
-                  <motion.button
-                    onClick={handlePrev}
-                    className="group/button bg-background flex h-8 w-8 items-center justify-center rounded-full border shadow-lg transition-all duration-200 hover:scale-110 hover:shadow-xl"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: 0.4 }}
-                    type="button"
-                  >
-                    <ChevronLeft className="text-foreground h-5 w-5 transition-transform duration-300 group-hover/button:-rotate-12" />
-                  </motion.button>
-                  <motion.button
-                    onClick={handleNext}
-                    className="group/button bg-background flex h-8 w-8 items-center justify-center rounded-full border shadow-lg transition-all duration-200 hover:scale-110 hover:shadow-xl"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: 0.4 }}
-                    type="button"
-                  >
-                    <ChevronRight className="text-foreground h-5 w-5 transition-transform duration-300 group-hover/button:rotate-12" />
-                  </motion.button>
+                <div className="flex justify-between pt-5">
+                  <div>
+                    <h2 className=" font-semibold lg:text-xl text-sm">
+                      Guillermo Rauch
+                    </h2>
+                    <p className="">CEO of Enigma</p>
+                  </div>
+                  <Image
+                    src="https://pro-section.ui-layouts.com/people/am1.jpg"
+                    alt="logo"
+                    width={200}
+                    height={200}
+                    className="w-16 h-16 rounded-xl object-cover"
+                  />
                 </div>
-                <div className="relative h-full w-full max-w-md">
-                  <AnimatePresence>
-                    {testimonials.map((testimonial, index) => (
-                      <motion.div
-                        key={testimonial.name}
-                        initial={{
-                          opacity: 0,
-                          scale: 0.9,
-                          y: 30,
-                        }}
-                        animate={{
-                          opacity: isActive(index) ? 1 : 0,
-                          scale: isActive(index) ? 1 : 0.95,
-                          y: isActive(index) ? 0 : 30,
-                        }}
-                        exit={{
-                          opacity: 0,
-                          scale: 0.9,
-                          y: -30,
-                        }}
-                        transition={{
-                          duration: 0.4,
-                          ease: "easeInOut",
-                        }}
-                        className={`absolute inset-0 min-h-fit ${isActive(index) ? "z-10" : "z-0"}`}
-                      >
-                        <div className="bg-background rounded-2xl border px-6 py-6 shadow-lg transition-all duration-200">
-                          <motion.p
-                            key={active}
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className="text-foreground mb-6 text-lg"
-                          >
-                            {(testimonial.content || "")
-                              .split(" ")
-                              .map((word, wordIndex) => (
-                                <motion.span
-                                  key={`${testimonial.name}-word-${wordIndex}`}
-                                  initial={{
-                                    filter: "blur(4px)",
-                                    opacity: 0,
-                                    y: 5,
-                                  }}
-                                  animate={{
-                                    filter: "blur(0px)",
-                                    opacity: 1,
-                                    y: 0,
-                                  }}
-                                  transition={{
-                                    duration: 0.2,
-                                    ease: "easeInOut",
-                                    delay: wordIndex * 0.02,
-                                  }}
-                                  className="inline-block"
-                                >
-                                  {word}&nbsp;
-                                </motion.span>
-                              ))}
-                          </motion.p>
-                          <motion.div
-                            className="flex items-center gap-3"
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.3, delay: 0.2 }}
-                          >
-                            <Avatar className="ring-foreground/10 size-8 border border-transparent shadow ring-1">
-                              <AvatarImage
-                                src={getAvatarUrl(testimonial.avatar, 64)}
-                                alt={testimonial.name}
-                              />
-                              <AvatarFallback>
-                                {testimonial.name.charAt(0)}
-                              </AvatarFallback>
-                            </Avatar>
-                            <div>
-                              <div className="text-foreground font-semibold">
-                                {testimonial.name}
-                              </div>
-                              <span className="text-muted-foreground text-sm">
-                                {testimonial.role}
-                              </span>
-                            </div>
-                          </motion.div>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </AnimatePresence>
+              </article>
+            </TimelineAnimation>
+            <TimelineAnimation
+              animationNum={1}
+              customVariants={revealVariants}
+              timelineRef={testimonialRef}
+              className="lg:flex-3 flex-4 lg:h-fit  lg:shrink-0 flex flex-col justify-between relative bg-blue-600 text-white overflow-hidden rounded-lg border border-gray-200 dark:border-neutral-800 p-5"
+            >
+              <article className="mt-auto">
+                <p>
+                  We&apos;ve seen incredible results with Hypersphere. Their
+                  expertise, dedication.
+                </p>
+                <div className="flex justify-between pt-5">
+                  <div>
+                    <h2 className=" font-semibold text-xl">Rika Shinoda</h2>
+                    <p className="">CEO of Kintsugi</p>
+                  </div>
+                  <Image
+                    src="https://pro-section.ui-layouts.com/people/am3.jpg"
+                    alt="logo"
+                    width={200}
+                    height={200}
+                    className="w-16 h-16 rounded-xl object-cover"
+                  />
                 </div>
-              </div>
-            </div>
-          </motion.div>
+              </article>
+            </TimelineAnimation>
+          </div>
+          <div className="lg:h-full  md:flex lg:flex-col h-fit lg:space-y-2 lg:gap-0 gap-2">
+            <TimelineAnimation
+              animationNum={2}
+              customVariants={revealVariants}
+              timelineRef={testimonialRef}
+              className="flex flex-col justify-between relative bg-[#111111] text-white overflow-hidden rounded-lg border border-gray-200 dark:border-neutral-800 p-5"
+            >
+              <article className="mt-auto">
+                <p className="2xl:text-base text-sm">
+                  Their team is highly professional, and their innovative
+                  solutions have truly transformed the way we operate.
+                </p>
+                <div className="flex justify-between items-end pt-5">
+                  <div>
+                    <h2 className=" font-semibold lg:text-xl text-lg">
+                      Reacher{" "}
+                    </h2>
+                    <p className="lg:text-base text-sm">CEO of OdeaoLabs</p>
+                  </div>
+                  <Image
+                    src="https://pro-section.ui-layouts.com/people/aam4.jpg"
+                    alt="logo"
+                    width={200}
+                    height={200}
+                    className="lg:w-16 lg:h-16 w-12 h-12 rounded-xl object-cover"
+                  />
+                </div>
+              </article>
+            </TimelineAnimation>
+            <TimelineAnimation
+              animationNum={3}
+              customVariants={revealVariants}
+              timelineRef={testimonialRef}
+              className="flex flex-col justify-between relative bg-[#111111] text-white overflow-hidden rounded-lg border border-gray-200 dark:border-neutral-800 p-5"
+            >
+              <article className="mt-auto">
+                <p className="2xl:text-base text-sm">
+                  We&apos;re extremely satisfied with Hypersphere. Their
+                  expertise and dedication have exceeded our expectations.
+                </p>
+                <div className="flex justify-between items-end pt-5">
+                  <div>
+                    <h2 className=" font-semibold lg:text-xl text-lg">John </h2>
+                    <p className="lg:text-base text-sm">CEO of Labsbo</p>
+                  </div>
+                  <Image
+                    src="https://pro-section.ui-layouts.com/people/am2.jpg"
+                    alt="logo"
+                    width={200}
+                    height={200}
+                    className="lg:w-16 lg:h-16 w-12 h-12 rounded-xl object-cover"
+                  />
+                </div>
+              </article>
+            </TimelineAnimation>
+            <TimelineAnimation
+              animationNum={4}
+              customVariants={revealVariants}
+              timelineRef={testimonialRef}
+              className="flex flex-col justify-between relative bg-[#111111] text-white overflow-hidden rounded-lg border border-gray-200 dark:border-neutral-800 p-5"
+            >
+              <article className="mt-auto">
+                <p className="2xl:text-base text-sm">
+                  Their customer support is absolutely exceptional. They are
+                  always available, incredibly helpful.
+                </p>
+                <div className="flex justify-between items-end pt-5">
+                  <div>
+                    <h2 className=" font-semibold lg:text-xl text-lg">
+                      Steven Sunny
+                    </h2>
+                    <p className="lg:text-base text-sm">CEO of boxefi</p>
+                  </div>
+                  <Image
+                    src="https://pro-section.ui-layouts.com/people/aam3.jpg"
+                    alt="logo"
+                    width={200}
+                    height={200}
+                    className="lg:w-16 lg:h-16 w-12 h-12 rounded-xl object-cover"
+                  />
+                </div>
+              </article>
+            </TimelineAnimation>
+          </div>
+          <div className="h-full md:flex lg:flex-col lg:space-y-2 lg:gap-0 gap-2">
+            <TimelineAnimation
+              animationNum={5}
+              customVariants={revealVariants}
+              timelineRef={testimonialRef}
+              className=" lg:flex-3 flex-4 flex flex-col justify-between relative bg-blue-600 text-white overflow-hidden rounded-lg border border-gray-200 dark:border-neutral-800 p-5"
+            >
+              <article className="mt-auto">
+                <p>Hypersphere has been a key partner in our growth journey.</p>
+                <div className="flex justify-between pt-5">
+                  <div>
+                    <h2 className=" font-semibold text-xl">Guillermo Rauch</h2>
+                    <p className="">CEO of OdeaoLabs</p>
+                  </div>
+                  <Image
+                    src="https://pro-section.ui-layouts.com/people/aam1.png"
+                    alt="logo"
+                    width={200}
+                    height={200}
+                    className="w-16 h-16 rounded-xl object-cover"
+                  />
+                </div>
+              </article>
+            </TimelineAnimation>
+            <TimelineAnimation
+              animationNum={6}
+              customVariants={revealVariants}
+              timelineRef={testimonialRef}
+              className="lg:flex-7 flex-6 flex flex-col justify-between relative bg-primaryColor overflow-hidden rounded-lg border border-gray-200 dark:border-neutral-800 p-5"
+            >
+              <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-size-[50px_56px] mask-[radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+              <figure>
+                <Image
+                  src={"https://pro-section.ui-layouts.com/logos/Logo-5.svg"}
+                  alt="logo"
+                  width={200}
+                  height={200}
+                />
+              </figure>
+              <article className="mt-auto">
+                <p>
+                  Hypersphere has been a true game-changer for us. Their
+                  exceptional service, combined with their deep expertise and
+                  commitment to excellence, has made a significant impact on our
+                  business.
+                </p>
+                <div className="flex justify-between pt-5">
+                  <div>
+                    <h2 className=" font-semibold text-xl">Paul Brauch</h2>
+                    <p className="">CTO of Spectrum</p>
+                  </div>
+                  <Image
+                    src="https://pro-section.ui-layouts.com/people/in1.jpg"
+                    alt="logo"
+                    width={200}
+                    height={200}
+                    className="w-16 h-16 rounded-xl object-cover"
+                  />
+                </div>
+              </article>
+            </TimelineAnimation>
+          </div>
         </div>
-      </div>
-    </section>
+
+        {/* <div className="absolute border-b-2 border-[#e6e6e6] dark:border-neutral-800 bottom-0 h-16 z-2 md:w-full w-[90%] md:left-0 left-[5%]">
+          <div className="container mx-auto w-full h-full relative before:absolute before:-left-2 before:-bottom-2 before:w-4 before:h-4 dark:before:bg-neutral-700 before:bg-white before:shadow-xs before:border dark:before:border-neutral-800 dark:after:border-neutral-800 before:border-gray-300 after:absolute after:-right-2 after:-bottom-2 after:w-4 after:h-4 after:bg-white dark:after:bg-neutral-700 after:shadow-xs after:border after:border-gray-300 "></div>
+        </div> */}
+      </section>
+    </>
   );
 }
 
-export default TestimonialsGrid;
+export default Testimonials;

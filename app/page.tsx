@@ -5,6 +5,7 @@ import Testimonials from "@/components/global/Testimonial";
 import TeamSection from "@/components/global/TeamSection";
 import StatsSection from "@/components/global/StatsSection";
 import PricingSection from "@/components/global/PricingSection";
+import FaqSection from "@/components/global/FaqSection";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <TeamSection />
         <StatsSection />
         <PricingSection />
+        <FaqSection />
       </main>
     </div>
   );

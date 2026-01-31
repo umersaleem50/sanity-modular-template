@@ -12,3 +12,5 @@ export const testimonials = [
     image: "/avatars/sara.png",
   },
 ];
+
+export const CARD_ANIMATION_DELAY = 0.1;

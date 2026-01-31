@@ -6,6 +6,7 @@ import TeamSection from "@/components/global/TeamSection";
 import StatsSection from "@/components/global/StatsSection";
 import PricingSection from "@/components/global/PricingSection";
 import FaqSection from "@/components/global/FaqSection";
+import FooterSection from "@/components/global/FooterSection";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <StatsSection />
         <PricingSection />
         <FaqSection />
+        <FooterSection />
       </main>
     </div>
   );

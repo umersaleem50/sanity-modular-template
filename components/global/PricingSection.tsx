@@ -2,8 +2,8 @@
 
 import { motion } from "motion/react";
 import { useState } from "react";
+import { CARD_ANIMATION_DELAY } from "../../Devdata/constant";
 import PriceFlow from "../ui/PriceFlow";
-import { CARD_ANIMATION_DELAY } from "../../Devdata/constants";
 
 export default function PricingSection() {
   const [isAnnual, setIsAnnual] = useState(true);

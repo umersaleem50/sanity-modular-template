@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { useState } from "react";
 import { CARD_ANIMATION_DELAY } from "../../Devdata/constant";
 import PriceFlow from "../ui/PriceFlow";
+import { Button } from "@/components/ui/button";
 
 export default function PricingSection() {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -77,12 +78,12 @@ export default function PricingSection() {
                       </span>
                     </div>
                     {/* CTA Button */}
-                    <button
-                      className="mb-6 inline-flex h-10 w-full cursor-pointer items-center justify-center gap-2 rounded-md bg-foreground px-4 py-2 font-medium text-background text-sm transition-colors hover:bg-foreground/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                      type="button"
+                    <Button
+                      size="default"
+                      className="rounded-md px-5 text-base"
                     >
                       Get Started
-                    </button>
+                    </Button>
                     {/* Description */}
                     <p className="mb-6 flex-grow text-foreground/70 text-sm leading-relaxed">
                       Essential features for growing businesses. Get started
@@ -130,7 +131,7 @@ export default function PricingSection() {
                 {/* Pro Plan (Featured) */}
                 <motion.div
                   animate={{ opacity: 1, y: 0 }}
-                  className="group relative flex h-[650px] cursor-pointer flex-col overflow-hidden rounded-2xl border bg-primary p-8"
+                  className="group relative flex h-162.5 cursor-pointer flex-col overflow-hidden rounded-2xl border bg-accent-foreground text-white p-8 dark:text-background"
                   data-animate-card
                   initial={{ opacity: 0, y: 40 }}
                   transition={{
@@ -140,39 +141,44 @@ export default function PricingSection() {
                   }}
                 >
                   {/* Gradient Accent */}
-                  <div className="gradient-accent absolute top-0 right-0 h-4 w-32 rounded-bl-2xl bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400" />
+                  <div className="gradient-accent absolute top-0 right-0 h-4 w-32 rounded-bl-2xl bg-linear-to-r from-blue-400 via-purple-400 to-pink-400" />
 
                   <div className="card-content relative z-10 flex h-full flex-col">
                     {/* Title */}
-                    <h3 className="mb-4 flex items-center gap-2 font-bold text-2xl text-white">
+                    <h3 className="mb-4 flex items-center gap-2 font-bold text-2xl">
                       Pro{" "}
-                      <div className="rounded-full bg-brand px-2 py-1 font-bold text-white text-xs">
+                      <div className="rounded-full bg-brand px-2 py-1 font-bold  text-xs">
                         Most Popular
                       </div>
                     </h3>
                     {/* Price & Duration */}
                     <div className="mb-6">
-                      <span className="font-semibold text-3xl text-white">
+                      <span className="font-semibold text-3xl">
                         <PriceFlow value={isAnnual ? 25 : 35} />€
                       </span>
-                      <span className="mx-2 text-white/70">•</span>
-                      <span className="text-white/70">Best for teams</span>
+                      <span className="mx-2 text-white/70 dark:text-background">
+                        •
+                      </span>
+                      <span className="text-white/70 dark:text-background">
+                        Best for teams
+                      </span>
                     </div>
                     {/* CTA Button */}
-                    <button
-                      className="mb-6 inline-flex h-10 w-full cursor-pointer items-center justify-center gap-2 rounded-md  bg-white px-4 py-2 font-medium text-black text-sm transition-colors hover:bg-foreground/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                      type="button"
+                    <Button
+                      size="default"
+                      variant="ghost"
+                      className="rounded-md px-5 bg-accent text-foreground hover:text-white"
                     >
                       Get Started
-                    </button>
+                    </Button>
                     {/* Description */}
-                    <p className="mb-6 flex-grow text-white/70 text-sm leading-relaxed">
+                    <p className="mb-6 grow text-white/70 text-sm leading-relaxed dark:text-background">
                       Advanced features for professional teams. Everything you
                       need to scale your business with confidence.
                     </p>
                     {/* What's Included */}
                     <div className="space-y-4">
-                      <h4 className="font-medium text-white/70 text-xs uppercase tracking-wider">
+                      <h4 className="font-medium text-white/70 text-xs uppercase tracking-wider dark:text-background">
                         What&apos;s included:
                       </h4>
                       <ul className="space-y-3 text-white">
@@ -187,10 +193,10 @@ export default function PricingSection() {
                           "Priority Updates",
                         ].map((item) => (
                           <li
-                            className="flex items-center gap-3 text-white text-sm"
+                            className="flex items-center gap-3 text-sm dark:text-background"
                             key={item}
                           >
-                            <div className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-foreground">
+                            <div className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-foreground">
                               <svg
                                 aria-hidden="true"
                                 className="h-2 w-2 text-background"
@@ -239,12 +245,12 @@ export default function PricingSection() {
                       </span>
                     </div>
                     {/* CTA Button */}
-                    <button
-                      className="mb-6 inline-flex h-10 w-full cursor-pointer items-center justify-center gap-2 rounded-md bg-foreground px-4 py-2 font-medium text-background text-sm transition-colors hover:bg-foreground/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                      type="button"
+                    <Button
+                      size="default"
+                      className="rounded-md px-5 text-base"
                     >
                       Contact Sales
-                    </button>
+                    </Button>
                     {/* Description */}
                     <p className="mb-6 flex-grow text-foreground/70 text-sm leading-relaxed">
                       Custom solutions for large organizations. Get dedicated

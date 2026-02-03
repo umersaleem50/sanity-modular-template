@@ -51,7 +51,7 @@ export default function TeamSection() {
         transition={{ duration: 0.6 }}
         className="container mx-auto px-4"
       >
-        <h2 className="text-4xl font-bold dark:text-white text-black text-center mb-12">
+        <h2 className="text-4xl font-bold text-foreground text-center mb-12">
           Meet Our Team
         </h2>
 

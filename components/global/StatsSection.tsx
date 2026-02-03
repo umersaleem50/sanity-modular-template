@@ -97,7 +97,7 @@ export function StatsSection({
                   ? { opacity: 1, y: 0, scale: 1 }
                   : { opacity: 0, y: 30, scale: 0.9 }
               }
-              className="group relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-background to-background/50 p-6 transition-all hover:scale-105 hover:border-brand hover:shadow-xl"
+              className="group relative overflow-hidden rounded-2xl border border-border bg-linear-to-br from-background to-background/50 p-6 transition-all hover:scale-105 hover:border-brand hover:shadow-xl"
               initial={{ opacity: 0, y: 30, scale: 0.9 }}
               key={stat.label}
               transition={{

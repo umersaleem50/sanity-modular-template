@@ -76,10 +76,10 @@ export function HeroSection1() {
                     <div className="bg-background group-hover:bg-muted size-6 overflow-hidden rounded-full duration-500">
                       <div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
                         <span className="flex size-6">
-                          <ArrowRight className="m-auto size-3 dark:text-white text-black" />
+                          <ArrowRight className="m-auto size-3 text-foreground" />
                         </span>
                         <span className="flex size-6">
-                          <ArrowRight className="m-auto size-3 dark:text-white text-black" />
+                          <ArrowRight className="m-auto size-3  text-foreground" />
                         </span>
                       </div>
                     </div>
@@ -90,7 +90,7 @@ export function HeroSection1() {
                   preset="fade-in-blur"
                   speedSegment={0.3}
                   as="h1"
-                  className="mt-8 text-balance text-6xl dark:text-white text-black md:text-7xl lg:mt-16 xl:text-[5.25rem] "
+                  className="mt-8 text-foreground text-6xl  md:text-7xl lg:mt-16 xl:text-[5.25rem] "
                 >
                   The Ultimate Library of Curated UI Designs
                 </TextEffect>
@@ -100,7 +100,7 @@ export function HeroSection1() {
                   speedSegment={0.3}
                   delay={0.5}
                   as="p"
-                  className="mx-auto mt-8 max-w-2xl text-balance text-lg dark:text-white/60 text-black"
+                  className="mx-auto mt-8 max-w-2xl text-balance text-lg  text-foreground"
                 >
                   Explore hundreds of beautifully crafted user interfaces from
                   top designers around the world. Choose our handpicked gallery
@@ -125,12 +125,10 @@ export function HeroSection1() {
                     <Button
                       asChild
                       size="lg"
-                      className="rounded-md px-5 text-base dark:bg-white bg-black"
+                      className="rounded-md px-5 text-base"
                     >
                       <Link href="#link">
-                        <span className="text-nowra dark:text-black text-white">
-                          Browse Designs
-                        </span>
+                        <span className="text-nowrap">Browse Designs</span>
                       </Link>
                     </Button>
                   </div>
@@ -142,9 +140,7 @@ export function HeroSection1() {
                     className="rounded-md px-5 bg-foreground/10"
                   >
                     <Link href="#link">
-                      <span className="text-nowrap dark:text-white text-black">
-                        Submit Your Work
-                      </span>
+                      <span className="text-nowrap">Submit Your Work</span>
                     </Link>
                   </Button>
                 </AnimatedGroup>

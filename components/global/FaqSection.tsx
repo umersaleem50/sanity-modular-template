@@ -112,7 +112,7 @@ export default function FaqSection({
                     rotate:
                       openIndex === index ? ROTATION_OPEN : ROTATION_CLOSED,
                   }}
-                  className="flex-shrink-0"
+                  className="shrink-0"
                   transition={{
                     duration: ANIMATION_DURATION,
                     ease: "easeInOut",

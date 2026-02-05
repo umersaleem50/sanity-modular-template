@@ -212,14 +212,14 @@ function HeroSection1() {
         falloffStart={1.2}
       />
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[95%] h-[60%] bg-black rounded-[20px] border-2 border-border text-white text-[2rem] z-6 px-6">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[95%] h-[60%] bg-black rounded-[20px] border-2 border-border text-white text-[2rem] z-6 px-6 pt-10">
         {/* Your content here */}
 
         <TextEffect
           preset="fade-in-blur"
           speedSegment={0.3}
           as="h1"
-          className="text-foreground text-3xl md:text-5xl xl:text-7xl text-center"
+          className="text-foreground text-3xl md:text-5xl xl:text-7xl text-center pt-4 md:pt-6 lg:pt-9 pb-5"
         >
           The Green Ai
         </TextEffect>
@@ -251,7 +251,11 @@ function HeroSection1() {
           className="flex flex-col items-center justify-center gap-2 md:flex-row"
         >
           <div key={1} className="">
-            <Button asChild size="lg" className="rounded-md px-5 text-base">
+            <Button
+              asChild
+              size="lg"
+              className="rounded-md px-5 text-base mt-10"
+            >
               <Link href="#link">
                 <span className="text-nowrap">Browse Designs</span>
               </Link>
@@ -261,11 +265,11 @@ function HeroSection1() {
             key={2}
             asChild
             size="lg"
-            variant="ghost"
-            className="rounded-md px-5 bg-foreground/10"
+            variant="outline"
+            className="rounded-md px-5 mt-10"
           >
             <Link href="#link">
-              <span className="text-nowrap">Submit Your Work</span>
+              <span className="text-nowrap">Download for Windows</span>
             </Link>
           </Button>
         </AnimatedGroup>

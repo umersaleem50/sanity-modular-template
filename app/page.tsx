@@ -1,4 +1,3 @@
-import { HeroSection1 } from "@/components/global/HeroSection";
 import Navbar from "@/components/global/Navbar";
 import { CompanyLogo } from "@/components/global/CompanyLogo";
 import Testimonials from "@/components/global/Testimonial";
@@ -7,6 +6,7 @@ import StatsSection from "@/components/global/StatsSection";
 import PricingSection from "@/components/global/PricingSection";
 import FaqSection from "@/components/global/FaqSection";
 import FooterSection from "@/components/global/FooterSection";
+import HeroSection1 from "@/components/global/HeroSection";
 
 export default function Home() {
   return (

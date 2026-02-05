@@ -212,16 +212,16 @@ function HeroSection1() {
         falloffStart={1.2}
       />
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[95%] h-[60%] bg-black rounded-[20px] border-2 border-border flex items-center gap-3 text-white text-[2rem] z-[6] px-6">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[95%] h-[60%] bg-black rounded-[20px] border-2 border-border text-white text-[2rem] z-6 px-6">
         {/* Your content here */}
 
         <TextEffect
           preset="fade-in-blur"
           speedSegment={0.3}
           as="h1"
-          className="text-foreground text-3xl md:text-5xl xl:text-7xl "
+          className="text-foreground text-3xl md:text-5xl xl:text-7xl text-center"
         >
-          The Ultimate Library of Curated UI Designs
+          The Green Ai
         </TextEffect>
         <TextEffect
           per="line"
@@ -229,7 +229,7 @@ function HeroSection1() {
           speedSegment={0.3}
           delay={0.5}
           as="p"
-          className="max-w-2xl text-balance text-lg  text-foreground"
+          className="max-w-4xl mx-auto text-balance text-lg text-center text-foreground"
         >
           Explore hundreds of beautifully crafted user interfaces from top
           designers around the world. Choose our handpicked gallery of modern UI

@@ -173,7 +173,6 @@ function HeroSection1() {
         height: "800px",
         position: "relative",
         overflow: "hidden",
-        backgroundColor: "#060010",
       }}
       onMouseMove={(e) => {
         const rect = e.currentTarget.getBoundingClientRect();
@@ -196,7 +195,7 @@ function HeroSection1() {
       <LaserFlow
         horizontalBeamOffset={0.1}
         verticalBeamOffset={0.0}
-        color="#81c984"
+        color="#307b34"
         // className="bg-background"
         horizontalSizing={0.8}
         verticalSizing={3}

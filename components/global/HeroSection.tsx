@@ -211,17 +211,22 @@ function HeroSection1() {
         decay={1.1}
         falloffStart={1.2}
       />
-
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[95%] h-[60%] bg-black rounded-[20px] border-2 border-border text-white text-[2rem] z-6 px-6 pt-10">
-        {/* Your content here */}
-
+      <div className="absolute top-12 ">
         <TextEffect
           preset="fade-in-blur"
           speedSegment={0.3}
           as="h1"
-          className="text-foreground text-3xl md:text-5xl xl:text-7xl text-center pt-4 md:pt-6 lg:pt-9 pb-5"
+          className="text-foreground text-3xl md:text-5xl xl:text-7xl text-center"
         >
-          The Green Ai
+          Automate more,
+        </TextEffect>
+        <TextEffect
+          preset="fade-in-blur"
+          speedSegment={0.3}
+          as="h1"
+          className="text-foreground text-3xl md:text-5xl xl:text-7xl text-center mb-1 md:mb-5"
+        >
+          Worry less.
         </TextEffect>
         <TextEffect
           per="line"
@@ -229,7 +234,7 @@ function HeroSection1() {
           speedSegment={0.3}
           delay={0.5}
           as="p"
-          className="max-w-4xl mx-auto text-balance text-lg text-center text-foreground"
+          className="max-w-2xl mx-auto text-balance text-center text-foreground text-sm sm:text-[16px] md:text-lg"
         >
           Explore hundreds of beautifully crafted user interfaces from top
           designers around the world. Choose our handpicked gallery of modern UI
@@ -266,7 +271,7 @@ function HeroSection1() {
             asChild
             size="lg"
             variant="outline"
-            className="rounded-md px-5 mt-10"
+            className="rounded-md px-5 text-white mt-2 sm:mt-5 md:mt-10 lg:mt-10 "
           >
             <Link href="#link">
               <span className="text-nowrap">Download for Windows</span>
@@ -274,10 +279,20 @@ function HeroSection1() {
           </Button>
         </AnimatedGroup>
       </div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[95%] h-[60%] bg-black rounded-[20px] border-2 border-border text-white text-[2rem] z-6 px-6 pt-10 overflow-hidden">
+        {/* Your content here */}
+
+        <Image
+          src="/hero-bottom.webp"
+          alt="hero-image"
+          fill
+          className="object-cover"
+        />
+      </div>
 
       <Image
         ref={revealImgRef}
-        src="/path/to/image.jpg"
+        src="/hero-img.webp"
         alt="Reveal effect"
         fill
         style={{

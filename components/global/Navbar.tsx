@@ -277,7 +277,7 @@ export default function Navbar() {
   return (
     <StaggeredMenu
       position="right"
-      isFixed={false}
+      isFixed={true}
       items={menuItems}
       socialItems={socialItems}
       displaySocials

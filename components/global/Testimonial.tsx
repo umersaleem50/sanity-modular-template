@@ -52,7 +52,7 @@ function Testimonials() {
             service
           </TimelineAnimation>
         </article>
-        <div className="lg:grid lg:grid-cols-3  gap-2 flex flex-col w-full lg:py-10 pt-10 pb-4 lg:px-10 px-4">
+        <div className="lg:grid lg:grid-cols-3 gap-2 flex flex-col w-full lg:py-10 pt-10 pb-4 lg:px-10 px-4">
           <div className="md:flex lg:flex-col lg:space-y-2 h-full lg:gap-0 gap-2 ">
             <TimelineAnimation
               animationNum={0}
@@ -95,7 +95,7 @@ function Testimonials() {
               animationNum={1}
               customVariants={revealVariants}
               timelineRef={testimonialRef}
-              className="lg:flex-3 flex-4 lg:h-fit  lg:shrink-0 flex flex-col justify-between relative bg-blue-600 text-white overflow-hidden rounded-lg border border-gray-200 dark:border-neutral-800 p-5"
+              className="lg:flex-3 flex-4 lg:h-fit  lg:shrink-0 flex flex-col justify-between relative bg-primary text-white overflow-hidden rounded-lg border border-gray-200 dark:border-neutral-800 p-5"
             >
               <article className="mt-auto">
                 <p>
@@ -123,7 +123,7 @@ function Testimonials() {
               animationNum={2}
               customVariants={revealVariants}
               timelineRef={testimonialRef}
-              className="flex flex-col justify-between relative bg-[#111111] text-white overflow-hidden rounded-lg border border-gray-200 dark:border-neutral-800 p-5"
+              className="flex flex-col justify-between relative bg-accent text-foreground overflow-hidden rounded-lg border border-border p-5"
             >
               <article className="mt-auto">
                 <p className="2xl:text-base text-sm">
@@ -151,7 +151,7 @@ function Testimonials() {
               animationNum={3}
               customVariants={revealVariants}
               timelineRef={testimonialRef}
-              className="flex flex-col justify-between relative bg-[#111111] text-white overflow-hidden rounded-lg border border-gray-200 dark:border-neutral-800 p-5"
+              className="flex flex-col justify-between relative bg-accent text-foreground overflow-hidden rounded-lg border border-border p-5"
             >
               <article className="mt-auto">
                 <p className="2xl:text-base text-sm">
@@ -177,7 +177,7 @@ function Testimonials() {
               animationNum={4}
               customVariants={revealVariants}
               timelineRef={testimonialRef}
-              className="flex flex-col justify-between relative bg-[#111111] text-white overflow-hidden rounded-lg border border-gray-200 dark:border-neutral-800 p-5"
+              className="flex flex-col justify-between relative bg-accent text-foreground overflow-hidden rounded-lg border border-border p-5"
             >
               <article className="mt-auto">
                 <p className="2xl:text-base text-sm">
@@ -207,7 +207,7 @@ function Testimonials() {
               animationNum={5}
               customVariants={revealVariants}
               timelineRef={testimonialRef}
-              className=" lg:flex-3 flex-4 flex flex-col justify-between relative bg-blue-600 text-white overflow-hidden rounded-lg border border-gray-200 dark:border-neutral-800 p-5"
+              className=" lg:flex-3 flex-4 flex flex-col justify-between relative bg-primary text-white overflow-hidden rounded-lg border border-border p-5"
             >
               <article className="mt-auto">
                 <p>Hypersphere has been a key partner in our growth journey.</p>
@@ -230,7 +230,7 @@ function Testimonials() {
               animationNum={6}
               customVariants={revealVariants}
               timelineRef={testimonialRef}
-              className="lg:flex-7 flex-6 flex flex-col justify-between relative bg-primaryColor overflow-hidden rounded-lg border border-gray-200 dark:border-neutral-800 p-5"
+              className="lg:flex-7 flex-6 flex flex-col justify-between relative bg-primaryColor overflow-hidden rounded-lg border border-border p-5"
             >
               <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-size-[50px_56px] mask-[radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
               <figure>
@@ -265,10 +265,6 @@ function Testimonials() {
             </TimelineAnimation>
           </div>
         </div>
-
-        {/* <div className="absolute border-b-2 border-[#e6e6e6] dark:border-neutral-800 bottom-0 h-16 z-2 md:w-full w-[90%] md:left-0 left-[5%]">
-          <div className="container mx-auto w-full h-full relative before:absolute before:-left-2 before:-bottom-2 before:w-4 before:h-4 dark:before:bg-neutral-700 before:bg-white before:shadow-xs before:border dark:before:border-neutral-800 dark:after:border-neutral-800 before:border-gray-300 after:absolute after:-right-2 after:-bottom-2 after:w-4 after:h-4 after:bg-white dark:after:bg-neutral-700 after:shadow-xs after:border after:border-gray-300 "></div>
-        </div> */}
       </section>
     </>
   );

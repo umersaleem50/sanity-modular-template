@@ -275,21 +275,24 @@ const socialItems = [
 
 export default function Navbar() {
   return (
-    <StaggeredMenu
-      position="right"
-      isFixed={true}
-      items={menuItems}
-      socialItems={socialItems}
-      displaySocials
-      displayItemNumbering={true}
-      menuButtonColor="#000"
-      openMenuButtonColor="#000"
-      changeMenuColorOnOpen={true}
-      colors={["#81c984", "##4dae50"]}
-      logoUrl="/next.svg"
-      accentColor="#81c984"
-      onMenuOpen={() => console.log("Menu opened")}
-      onMenuClose={() => console.log("Menu closed")}
-    />
+    <div>
+      <StaggeredMenu
+        // className="bg-primary"
+        position="right"
+        isFixed={true}
+        items={menuItems}
+        socialItems={socialItems}
+        displaySocials
+        displayItemNumbering={true}
+        menuButtonColor="#000"
+        openMenuButtonColor="#000"
+        changeMenuColorOnOpen={true}
+        colors={["#81c984", "##4dae50"]}
+        logoUrl="/next.svg"
+        accentColor="#81c984"
+        onMenuOpen={() => console.log("Menu opened")}
+        onMenuClose={() => console.log("Menu closed")}
+      />
+    </div>
   );
 }

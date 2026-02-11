@@ -1,17 +1,19 @@
 "use client";
 
+import {
+  ANIMATION_DURATION,
+  CONTENT_DELAY,
+  HOVER_SCALE,
+  INITIAL_CONTENT_Y,
+  ROTATION_CLOSED,
+  ROTATION_OPEN,
+  STAGGER_DELAY,
+  INITIAL_Y_OFFSET,
+  TAP_SCALE,
+} from "@/Devdata/constant";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
-
-const ANIMATION_DURATION = 0.6;
-const STAGGER_DELAY = 0.1;
-const INITIAL_Y_OFFSET = 20;
-const HOVER_SCALE = 1.01;
-const TAP_SCALE = 0.99;
-const ROTATION_OPEN = 180;
-const ROTATION_CLOSED = 0;
-const CONTENT_DELAY = 0.1;
-const INITIAL_CONTENT_Y = -10;
+import SectionText from "../ui/SectionText";
 
 interface FaqsAccordionProps {
   title?: string;
@@ -67,21 +69,7 @@ export default function FaqSection({
   return (
     <section className="py-20">
       <div className="mx-auto max-w-4xl px-6">
-        <motion.div
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-16 text-center"
-          initial={{ opacity: 0, y: INITIAL_Y_OFFSET }}
-          transition={{ duration: ANIMATION_DURATION }}
-          viewport={{ once: true }}
-          whileInView={{ opacity: 1, y: 0 }}
-        >
-          <h2 className="mb-4 font-bold text-3xl text-foreground lg:text-4xl">
-            {title}
-          </h2>
-          <p className="mx-auto max-w-2xl text-foreground/70 text-lg">
-            {description}
-          </p>
-        </motion.div>
+        <SectionText title={title} description={description} />
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (

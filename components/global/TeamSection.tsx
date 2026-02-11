@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import TeamMemberCard, { type TeamMember } from "@/components/ui/team-card";
+import SectionText from "../ui/SectionText";
 
 const teamMembers: TeamMember[] = [
   {
@@ -45,16 +46,16 @@ const teamMembers: TeamMember[] = [
 export default function TeamSection() {
   return (
     <section className="py-16 flex flex-col items-center justify-center px-9">
+      <SectionText
+        title="Meet Our Team"
+        description="Meet our inovative team members"
+      />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="container mx-auto px-4"
       >
-        <h2 className="text-4xl font-bold text-foreground text-center mb-12">
-          Meet Our Team
-        </h2>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 justify-items-center">
           {teamMembers.map((member) => (
             <TeamMemberCard key={member.id} member={member} />

@@ -5,6 +5,7 @@ import { useState } from "react";
 import { CARD_ANIMATION_DELAY } from "../../Devdata/constant";
 import PriceFlow from "../ui/PriceFlow";
 import { Button } from "@/components/ui/button";
+import SectionText from "../ui/SectionText";
 
 export default function PricingSection() {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -14,13 +15,12 @@ export default function PricingSection() {
       <div className="relative bg-muted/50 py-16 md:py-32">
         <div className="mx-auto max-w-5xl px-6">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-balance font-bold text-3xl md:text-4xl lg:text-5xl lg:tracking-tight">
-              Choose your perfect plan
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-balance text-foreground/70 text-lg">
-              Modern pricing plans designed for teams of all sizes. Scale your
-              business with confidence.
-            </p>
+            <SectionText
+              title=" Choose your perfect plan"
+              description="  Modern pricing plans designed for teams of all sizes. Scale your
+              business with confidence."
+            />
+
             <div className="my-12">
               <div
                 className="relative mx-auto grid w-fit grid-cols-2 rounded-full border bg-background p-1 *:block *:h-8 *:w-24 *:rounded-full *:text-foreground *:text-sm *:hover:opacity-75"

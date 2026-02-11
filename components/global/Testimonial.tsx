@@ -2,6 +2,7 @@
 import { TimelineAnimation } from "@/components/ui/TimeLine";
 import Image from "next/image";
 import { useRef } from "react";
+import SectionText from "../ui/SectionText";
 
 function Testimonials() {
   const testimonialRef = useRef<HTMLDivElement>(null);
@@ -33,23 +34,27 @@ function Testimonials() {
           className={"max-w-(--breakpoint-md) mx-auto text-center space-y-2 "}
         >
           <TimelineAnimation
-            as="h1"
             className={"xl:text-4xl text-3xl  font-medium"}
             animationNum={0}
             customVariants={revealVariants}
             timelineRef={testimonialRef}
           >
-            Trusted by Startups and the world&apos;s largest companies
+            <SectionText
+              animated={false}
+              title=" Trusted by Startups and the world's largest companies"
+            />
           </TimelineAnimation>
           <TimelineAnimation
-            as="p"
             className={"mx-auto text-gray-500"}
             animationNum={1}
             customVariants={revealVariants}
             timelineRef={testimonialRef}
           >
-            Let&apos;s hear how hypershpere client&apos;s feels about our
-            service
+            <SectionText
+              animated={false}
+              description="Let's hear how hypershpere client's feels about our
+            service"
+            />
           </TimelineAnimation>
         </article>
         <div className="lg:grid lg:grid-cols-3 gap-2 flex flex-col w-full lg:py-10 pt-10 pb-4 lg:px-10 px-4">

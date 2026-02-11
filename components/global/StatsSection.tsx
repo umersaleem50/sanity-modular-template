@@ -3,6 +3,7 @@
 import { DollarSign, Smartphone, Star, Users } from "lucide-react";
 import { motion, useInView } from "motion/react";
 import React, { useRef } from "react";
+import SectionText from "../ui/SectionText";
 
 const STAGGER_DELAY = 0.1;
 const ICON_STAGGER_OFFSET = 0.2;
@@ -71,20 +72,7 @@ export function StatsSection({
   return (
     <section className="py-20">
       <div className="mx-auto max-w-7xl px-6">
-        <motion.div
-          className="mb-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          whileInView={{ opacity: 1, y: 0 }}
-        >
-          <h2 className="mb-4 font-bold text-3xl text-foreground lg:text-4xl">
-            {title}
-          </h2>
-          <p className="mx-auto max-w-2xl text-foreground/70 text-lg">
-            {description}
-          </p>
-        </motion.div>
+        <SectionText title={title} description={description} />
 
         <div
           className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4"

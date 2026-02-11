@@ -152,11 +152,7 @@ export function StatsSection({
                   animate={
                     isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }
                   }
-                  className={`inline-flex items-center rounded-full px-2 py-1 font-medium text-xs ${
-                    stat.trend.direction === "up"
-                      ? "bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400"
-                      : "bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-400"
-                  }`}
+                  className={`inline-flex items-center rounded-full px-2 py-1 font-medium text-xs bg-primary text-accent`}
                   initial={{ opacity: 0, x: -10 }}
                   transition={{
                     duration: 0.4,
